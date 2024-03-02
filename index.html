@@ -63,12 +63,12 @@
 </head>
 <body>
 
-<div id="welcomeMessage">Hoşgeldiniz Dilara Hanım</div>
-<input type="text" id="passwordInput" placeholder="Şifre">
+<div id="welcomeMessage">Hoşgeldin Dünyanın en güzeli en özeli prensesim</div>
+<input type="text" id="passwordInput" placeholder="Bulduğun şifre prenses">
 <button id="submitButton">Onayla</button>
 <div id="gifContainer">
     <img id="loadingGifInitial" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXk2dnJtdXYwcWh6cGtpYzNwNjVvMzYzc29zaXdtcjlnMjdtcGVkOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NS7gPxeumewkWDOIxi/giphy.gif" alt="Yükleniyor..." class="gif">
-    <img id="loadingGif" src="https://media.giphy.com/media/Y3e3gnofVUd4RnXKDz/giphy-downsized-large.gif" alt="Yükleniyor..." class="gif hidden">
+    <img id="loadingGif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYndta25kNGJhdWd6NjJrbHo0M2YydmlqOHJtdHE4Zmo5Njk1NXQyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/88iYsvbegSUn9bSTF8/giphy.gif" alt="Yükleniyor..." class="gif hidden">
 </div>
 
 <script>
@@ -81,8 +81,8 @@
 
     submitButton.addEventListener("click", function() {
         var password = passwordInput.value;
-        if (password === "123") {
-            welcomeMessage.innerHTML = "Afferimmm Akıllı bıdığım şimdi sıradaki gelsin";
+        if (password === "1772") {
+            welcomeMessage.innerHTML = "Afferimmm Akıllı bıdığım şimdi sıradaki geliyorrrr";
             loadingGif.style.display = "none"; // Doğru şifredeki GIF'i gizle
             initialGif.style.display = "none"; // Başlangıçtaki GIF'i gizle
             passwordInput.style.display = "none"; // Şifre giriş alanını gizle
@@ -118,7 +118,7 @@
                     var newPassword = document.getElementById("newPasswordInput").value.toLowerCase(); // Convert the input to lowercase
                     if (newPassword === "aile") {
                         // Yeni şifre doğruysa yapılacak işlemler buraya
-                        image.src = "https://mo.ciner.com.tr/showtv/iu/1920x1080_6/aile.jpg?v=1708585422"; // Yeni fotoğrafın URL'sini buraya girin
+                        image.src = "https://github.com/SupKyaria/SupKyaria.github.io/blob/main/WhatsApp%20Image%202024-03-03%20at%2000.03.46.jpeg?raw=true"; // Yeni fotoğrafın URL'sini buraya girin
                         document.getElementById("newPasswordInput").style.display = "none"; // Yeni şifre giriş alanını gizle
                         newPasswordSubmitButton.style.display = "none"; // Yeni şifre onayla butonunu gizle
                     } else {
