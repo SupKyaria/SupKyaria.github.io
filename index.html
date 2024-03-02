@@ -121,6 +121,12 @@
                         image.src = "https://github.com/SupKyaria/SupKyaria.github.io/blob/main/WhatsApp%20Image%202024-03-03%20at%2000.03.46.jpeg?raw=true"; // Yeni fotoğrafın URL'sini buraya girin
                         document.getElementById("newPasswordInput").style.display = "none"; // Yeni şifre giriş alanını gizle
                         newPasswordSubmitButton.style.display = "none"; // Yeni şifre onayla butonunu gizle
+                        var efeText = document.createElement("div");
+                        efeText.innerHTML = "Selam ben Efe";
+                        efeText.style.color = "white";
+                        efeText.style.fontSize = "24px";
+                        efeText.style.marginTop = "10px";
+                        document.body.appendChild(efeText);
                     } else {
                         alert("Yeni şifre yanlış. Lütfen tekrar deneyin.");
                     }
