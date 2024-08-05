@@ -1,147 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hoşgeldiniz</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-image: url("https://s.tmimgcdn.com/scr/800x500/345800/mavi-doku-arkaplani--koyu-lacivert-arka-plan--mavi-dokulu-duvar-arka-plani_345815-original.jpg");
-        background-size: cover;
-        background-position: center;
-        color: white;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    #welcomeMessage {
-        font-size: 36px;
-    }
-    #passwordInput, #newPasswordInput {
-        margin-top: 20px;
-        font-size: 16px;
-        padding: 5px;
-        display: block;
-    }
-    #submitButton, #newPasswordSubmitButton {
-        margin-top: 10px;
-        font-size: 16px;
-        padding: 5px 10px;
-        display: block;
-    }
-    #gifContainer {
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .gif {
-        width: 250px;
-        height: auto;
-    }
-    .hidden {
-        display: none;
-    }
-    #videoContainer {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 999;
-    }
-    #videoTitle {
-        color: white;
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
-</style>
-</head>
-<body>
-
-<div id="welcomeMessage">Hoşgeldin Dünyanın en güzeli en özeli prensesim</div>
-<input type="text" id="passwordInput" placeholder="Bulduğun şifre prenses">
-<button id="submitButton">Onayla</button>
-<div id="gifContainer">
-    <img id="loadingGifInitial" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXk2dnJtdXYwcWh6cGtpYzNwNjVvMzYzc29zaXdtcjlnMjdtcGVkOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NS7gPxeumewkWDOIxi/giphy.gif" alt="Yükleniyor..." class="gif">
-    <img id="loadingGif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYndta25kNGJhdWd6NjJrbHo0M2YydmlqOHJtdHE4Zmo5Njk1NXQyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/88iYsvbegSUn9bSTF8/giphy.gif" alt="Yükleniyor..." class="gif hidden">
-</div>
-
-<script>
-    var loadingGif = document.getElementById("loadingGif");
-    var welcomeMessage = document.getElementById("welcomeMessage");
-    var passwordInput = document.getElementById("passwordInput");
-    var submitButton = document.getElementById("submitButton");
-    var initialGif = document.getElementById("loadingGifInitial");
-    var videoContainer = document.getElementById("videoContainer");
-
-    submitButton.addEventListener("click", function() {
-        var password = passwordInput.value;
-        if (password === "1772") {
-            welcomeMessage.innerHTML = "Afferimmm Akıllı bıdığım şimdi sıradaki geliyorrrr";
-            loadingGif.style.display = "none"; // Doğru şifredeki GIF'i gizle
-            initialGif.style.display = "none"; // Başlangıçtaki GIF'i gizle
-            passwordInput.style.display = "none"; // Şifre giriş alanını gizle
-            submitButton.style.display = "none"; // Onayla butonunu gizle
-            setTimeout(function() {
-                welcomeMessage.style.display = "none"; // Bravo bildiniz yazısını gizle
-                var image = document.createElement("img");
-                image.src = "https://github.com/SupKyaria/SupKyaria.github.io/blob/main/aile.jpeg?raw=true"; // Değiştirin: eklemek istediğiniz fotoğrafın yolunu ekleyin
-                image.style.width = "600px"; // Değiştirilebilir: fotoğrafın genişliğini ayarlayın
-                image.style.height = "auto"; // Değiştirilebilir: fotoğrafın yüksekliğini ayarlayın
-                document.body.appendChild(image);
-                
-                // Yeni şifre girme kısmını ekleyin
-                var newPasswordInput = document.createElement("input");
-                newPasswordInput.type = "text";
-                newPasswordInput.id = "newPasswordInput";
-                newPasswordInput.placeholder = "Yeni Şifre";
-                newPasswordInput.style.marginTop = "20px";
-                newPasswordInput.style.fontSize = "16px";
-                newPasswordInput.style.padding = "5px";
-                document.body.insertBefore(newPasswordInput, videoContainer);
-                
-                // Yeni şifre onayla butonunu ekleyin
-                var newPasswordSubmitButton = document.createElement("button");
-                newPasswordSubmitButton.id = "newPasswordSubmitButton";
-                newPasswordSubmitButton.innerHTML = "Onayla";
-                newPasswordSubmitButton.style.marginTop = "10px";
-                newPasswordSubmitButton.style.fontSize = "16px";
-                newPasswordSubmitButton.style.padding = "5px 10px";
-                document.body.insertBefore(newPasswordSubmitButton, videoContainer);
-
-                newPasswordSubmitButton.addEventListener("click", function() {
-                    var newPassword = document.getElementById("newPasswordInput").value.toLowerCase(); // Convert the input to lowercase
-                    if (newPassword === "aile") {
-                        // Yeni şifre doğruysa yapılacak işlemler buraya
-                        image.src = "https://github.com/SupKyaria/SupKyaria.github.io/blob/main/WhatsApp%20Image%202024-03-03%20at%2000.03.46.jpeg?raw=true"; // Yeni fotoğrafın URL'sini buraya girin
-                        document.getElementById("newPasswordInput").style.display = "none"; // Yeni şifre giriş alanını gizle
-                        newPasswordSubmitButton.style.display = "none"; // Yeni şifre onayla butonunu gizle
-                        var efeText = document.createElement("a"); // Link olarak oluşturulacak element
-                        efeText.href = "https://youtu.be/-SlVSrAs3t8"; // Linkin hedefi
-                        efeText.innerHTML = "En kıymetlime "; // Linkin içeriği
-                        efeText.style.color = "white";
-                        efeText.style.fontSize = "24px";
-                        efeText.style.marginTop = "10px";
-                        document.body.appendChild(efeText);
-                    } else {
-                        alert("Yeni şifre yanlış. Lütfen tekrar deneyin.");
-                    }
-                });
-            }, 4000); // 4 saniye sonra fotoğrafı ekle
-            videoContainer.classList.remove("hidden"); // Videoyu göster
-        } else {
-            welcomeMessage.innerHTML = "Sanırım yeteri kadar dikkatli araştıramadınız Dilara Hanım. Lütfen tekrar deneyin.";
-            loadingGif.style.display = "block"; // Yanlış şifredeki GIF'i göster
-            initialGif.style.display = "none"; // Başlangıçtaki GIF'i gizle
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönlendirme Sayfası</title>
+    <style>
+        body {
+            background-image: url('https://artfoliocreative.com/wp-content/uploads/2023/10/pembe.webp');
+            background-size: cover; /* Arka planın tamamını kaplayacak şekilde ayarlanır */
+            background-repeat: no-repeat; /* Arka plan resmi tekrarlanmaz */
+            background-attachment: fixed; /* Arka plan resmi sabitlenir */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white; /* Yazı rengini beyaz yapar */
+            text-shadow: 2px 2px 4px #000; /* Yazı için gölge efekti ekler */
         }
-    });
-</script>
-
+    </style>
+    <script>
+        // Sayfa yüklendikten 5 saniye sonra yönlendirme fonksiyonu
+        function yonlendir() {
+            setTimeout(function() {
+                window.location.href = "https://www.youtube.com/watch?v=bm7hs-ZgTyo&list=PLcNWqzWzYG2vjpRziWc7cs8S6TRtLVbJ7&index=7"; // Yönlendirilmek istenen site adresi
+            }, 5000); // 5000 milisaniye = 5 saniye
+        }
+    </script>
+</head>
+<body onload="yonlendir()">
+    <h1>Prensesimmm hoşgeldinnnnn</h1>
+    <p>5 saniye içinde yönlendirilceksin hayatımın neşesi seni çok seviyorum</p>
 </body>
 </html>
-
